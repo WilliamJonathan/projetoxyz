@@ -2,8 +2,11 @@
 {
     public enum SaleStatus : int
     {
-        Pending = 0,
-        Billed = 1,
-        Canceled = 2
+        //Pending = 0,
+        //Billed = 1,
+        //Canceled = 2
+        Pendente = 0,
+        Faturado = 1,
+        Cancelado = 2
     }
 }
