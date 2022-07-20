@@ -9,8 +9,6 @@ namespace SalesWebMvc.Models
     public class Department
     {
 
-        private readonly SalesWebMvcContext _context;
-
         public int Id { get; set; }
         public string Name { get; set; }
         //um departamento possui varios vendedores
@@ -35,14 +33,6 @@ namespace SalesWebMvc.Models
         {
             //pega cada vendedor da lista e soma as vendas de acordo com o departamento
             return Sellers.Sum(Seller => Seller.TotalSales(initial, final));
-        }
-
-        public String DepartmentName(int id)
-        {
-            //return _context.Department.Where(d => d.Equals(id)).FirstOrDefault()?.Name;
-            //return _context.Department.Select(x => x.Name).Where(d => d.Equals(id)).ToString();
-            var ret = _context.Department.FirstOrDefault(obj => obj.Id == id);
-            return ret.Name.ToString();
         }
 
     }
